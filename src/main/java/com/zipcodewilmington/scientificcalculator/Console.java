@@ -17,7 +17,7 @@ public class Console {
 
     public static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
-        println(prompt);
+        System.out.println("Please enter a function : ");
         String userInput = scanner.nextLine();
         return userInput;
     }
@@ -53,20 +53,20 @@ public class Console {
                 char sign = input.next().charAt(0);
 
                 if (sign == '+' ){
-                result=firstnumber + secondnumber;
+                result= Calc.add(firstnumber,secondnumber);
                 System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
                 }
                 else if(sign == '-')
                 {
-                result=firstnumber-secondnumber;
+                result= Calc.subtract(firstnumber,secondnumber);
                 System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
                 }
                 else if(sign == '/'){
-                result=firstnumber/secondnumber;
+                result= Calc.divide(firstnumber,secondnumber);
                 System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
                 }
                 else if(sign == '*'){
-                result=firstnumber*secondnumber;
+                result=Calc.multiply(firstnumber,secondnumber);
                 System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
                 }
                 else
