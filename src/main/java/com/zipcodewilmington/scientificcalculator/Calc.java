@@ -59,7 +59,7 @@ public class Calc {
     }
 
     public static double inverse(int firstValue){
-        return 1/firstValue;
+        return (double)1/firstValue;
     }
 
     public static double inverse(double firstValue){

@@ -2,6 +2,8 @@ package com.zipcodewilmington.scientificcalculator;
 
 public class SciCal {
     private Double Memory;
+    private static int radordeg = 0;
+    private static int displayNum =0;
 
 
     public double memoryAccess(){
@@ -64,4 +66,59 @@ public class SciCal {
     }
 
     //Switch display
+    public static void switchDisplayMode(double val){
+        if ( displayNum== 0){
+            switchDisplayMode("Hexadecimal",val);
+            displayNum++;
+        }else if(displayNum  ==1){
+            switchDisplayMode("Binary", val);
+
+        }else if (displayNum == 2){
+            switchDisplayMode("Octal",val);
+            displayNum++;
+        }else {
+            switchDisplayMode("", val);
+            displayNum = 0;
+        }
+    }
+
+
+
+    public static void switchDisplayMode(String choice, double value){
+        Integer val = (int)value;
+        switch(choice){
+            case "Hexadecimal":
+                System.out.println(val.toHexString(val));
+                break;
+            case "Binary":
+                System.out.println(val.toBinaryString(val));
+                break;
+            case "Octal" :
+                System.out.println(val.toOctalString(val));
+                break;
+            case "Decimal" :
+                System.out.println("%d"+val);
+                break;
+        }
+    }
+
+    public static void switchUnitsMode(double val){
+        if (radordeg == 0){
+            switchUnitsMode("Radians",val);
+            radordeg++;
+        }else {
+            switchUnitsMode("Degrees", val);
+            radordeg = 0;
+        }
+    }
+
+    public static void switchUnitsMode(String mode, double val){
+
+        if(mode.toLowerCase().equals("Radians")) {
+            System.out.println(""+Math.toRadians(val));
+        } else if(mode.toLowerCase().equals("degrees")) {
+            System.out.println(""+Math.toDegrees(val));
+        }
+    }
 }
+

@@ -19,60 +19,83 @@ public class Console {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter a function : ");
         String userInput = scanner.nextLine();
+        System.out.println("");
         return userInput;
     }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
-    }
+        Scanner input=new Scanner(System.in);
 
-    public static Double getDoubleInput(String prompt) {
-        return null;
-    }
-}
-   /* Scanner input=new Scanner(System.in);
-
-    int firstnumber,secondnumber,result;
+        int firstNumber;
 
 //Assign character variable + - * /
 
-        System.out.print("Enter your first number : ");
+        System.out.print("Enter a number : ");
 
-                //input any number from user //
-                firstnumber=input.nextInt();
+        //input any number from user //
+        firstNumber=input.nextInt();
+        return firstNumber;
+    }
 
-                System.out.print("Enter the second number : ");
+    public static Double getDoubleInput(String prompt) {
+        Scanner input=new Scanner(System.in);
 
-                //input any number from user//
-                secondnumber=input.nextInt();
+        double firstNumber;
 
-                //Ask the user to enter operator to be used
-                System.out.print("Choose an operator: ");
+//Assign character variable + - * /
 
-                //input is received from user//
-                char sign = input.next().charAt(0);
+        System.out.print("Enter a number : ");
+
+        //input any number from user //
+        firstNumber=input.nextDouble();
+
+        return firstNumber;
+
+    }
+    public static void switchDisplay(double resultD) {
+        System.out.println("Change Units?(Radians,Degrees,exit");
+        String sign = getStringInput("Change Units?(Radians,Degrees,exit");
+        while (!(sign.toLowerCase().equals("exit"))) {
+
+            if (sign.equals("\n")) {
+                SciCal.switchDisplayMode(resultD);
+            } else
+                SciCal.switchUnitsMode(sign, resultD);
+            System.out.println("");
+            sign = getStringInput("Change Units?(Radians,Degrees,exit");
+        }
+    }
+/*
+public static void main(){
+        int result =0;
+        double resultD = 0;
+        getStringInput();
+    char sign = input.next().charAt(0);
 
                 if (sign == '+' ){
-                result= Calc.add(firstnumber,secondnumber);
-                System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
-                }
+
+        System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
+    }
                 else if(sign == '-')
-                {
-                result= Calc.subtract(firstnumber,secondnumber);
-                System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
-                }
+    {
+        result= Calc.subtract(firstnumber,secondnumber);
+        System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
+    }
                 else if(sign == '/'){
-                result= Calc.divide(firstnumber,secondnumber);
-                System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
-                }
+        result= Calc.divide(firstnumber,secondnumber);
+        System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
+    }
                 else if(sign == '*'){
-                result=Calc.multiply(firstnumber,secondnumber);
-                System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
-                }
+        result=Calc.multiply(firstnumber,secondnumber);
+        System.out.println(firstnumber +" "+sign +" "+secondnumber +"= "+" "+ result );
+    }
                 else
 
-                System.out.println("Error, Please check your input");
+                        System.out.println("Error, Please check your input");
 
 
 
-                }*/
+}*/
+
+
+}
