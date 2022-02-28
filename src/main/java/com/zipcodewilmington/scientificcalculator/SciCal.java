@@ -1,19 +1,19 @@
 package com.zipcodewilmington.scientificcalculator;
 
 public class SciCal {
-    private Double Memory;
+    private static Double Memory;
     private static int radordeg = 0;
     private static int displayNum =0;
 
 
-    public double memoryAccess(){
+    public static double memoryAccess(){
         return Memory;
     }
-    public void resetMemory(){
+    public static void resetMemory(){
         Memory = 0.0;
     }
 
-    public void addToMemory(double currentValue){
+    public static void addToMemory(double currentValue){
         Memory = currentValue;
     }
 

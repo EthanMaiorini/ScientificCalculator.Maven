@@ -6,22 +6,22 @@ package com.zipcodewilmington.scientificcalculator;
 public class MainApplication {
     public static void main(String[] args) {
         Console.println("Welcome to my calculator!");
-        Console.println("List of Functions: +,-,*,/,Square root,Square,power,inverse,-/+");
+        Console.println("List of Functions: +,-,*,/,Square root,Square,power,inverse,-/+, M+,MC,MRC");
         Console.println("Sine,Cosine,Tangent,Asine,Acosine,Atangent,LOG,10^x,Ln,e^x,!,exit");
         String sign = Console.getStringInput("Enter a string");
+        int result = 0;
+        double resultD =0.0;
         while (!(sign.toLowerCase().equals("exit"))) {
-            // Integer i = Console.getIntegerInput("Enter an integer");
-            // Double d = Console.getDoubleInput("Enter a double.");
 
-            // Console.println("The user input %s as a string", s);
-            //Console.println("The user input %s as a integer", i);
-            // Console.println("The user input %s as a d", d);
+            if(sign.equals("M+")){
+                if ((result>0) ||(result<0))
+                    SciCal.addToMemory((double)result);
+                else SciCal.addToMemory(resultD);
+            } else if (sign.equals("MC")){
+                SciCal.resetMemory();
+            }
 
-            int result = 0;
-            double resultD = 0;
-
-
-            if (sign.equals("+")) {
+            else if (sign.equals("+")) {
                 Integer i = Console.getIntegerInput("Enter an Integer");
                 Integer i2 = Console.getIntegerInput("Enter an Integer");
                 result = Calc.add(i, i2);

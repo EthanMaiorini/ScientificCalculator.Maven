@@ -26,8 +26,8 @@ public class Calc {
         return (double)(firstValue * secondValue);
     }
 
-    public static int divide(int firstValue, int secondValue){
-        return firstValue / secondValue;
+    public static double divide(int firstValue, int secondValue){
+        return (double) firstValue / secondValue;
     }
 
     public static double divide(double firstValue, double secondValue){

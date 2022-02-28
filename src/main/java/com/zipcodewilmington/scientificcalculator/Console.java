@@ -33,7 +33,8 @@ public class Console {
         System.out.print("Enter a number : ");
 
         //input any number from user //
-        firstNumber=input.nextInt();
+            firstNumber = input.nextInt();
+
         return firstNumber;
     }
 
