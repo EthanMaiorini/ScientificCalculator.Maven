@@ -5,144 +5,148 @@ package com.zipcodewilmington.scientificcalculator;
  */
 public class MainApplication {
     public static void main(String[] args) {
+        double resultD =0.0;
         Console.println("Welcome to my calculator!");
+
         Console.println("List of Functions: +,-,*,/,Square root,Square,power,inverse,-/+, M+,MC,MRC");
         Console.println("Sine,Cosine,Tangent,Asine,Acosine,Atangent,LOG,10^x,Ln,e^x,!,exit");
+        resultD = Console.getDoubleInput("Enter an Integer");
         String sign = Console.getStringInput("Enter a string");
-        int result = 0;
-        double resultD =0.0;
+        //int result = 0;
         while (!(sign.toLowerCase().equals("exit"))) {
 
             if(sign.equals("M+")){
-                if ((result>0) ||(result<0))
-                    SciCal.addToMemory((double)result);
-                else SciCal.addToMemory(resultD);
+                SciCal.addToMemory(resultD);
             } else if (sign.equals("MC")){
                 SciCal.resetMemory();
             }
 
             else if (sign.equals("+")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                Integer i2 = Console.getIntegerInput("Enter an Integer");
-                result = Calc.add(i, i2);
+                double i2= Console.getDoubleInput("Enter an Integer");
+                resultD = Calc.add(resultD, i2);
 
-                System.out.println(i + " " + sign + " " + i2 + "= " + " " + result);
+                System.out.println( resultD);
             } else if (sign.equals("-")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                Integer i2 = Console.getIntegerInput("Enter an Integer");
-                result = Calc.subtract(i, i2);
 
-                System.out.println(i + " " + sign + " " + i2 + "= " + " " + result);
+                double i2 = Console.getDoubleInput("Enter an Integer");
+                resultD = Calc.subtract(resultD, i2);
+
+                System.out.println( resultD);
             } else if (sign.equals("/")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                Integer i2 = Console.getIntegerInput("Enter an Integer");
-                while (i2 == 0) {
+                double i2 = Console.getDoubleInput("Enter an Integer");
+                while (i2 == 0.0) {
                     System.out.println("Error, Please check your input");
-                    i2 = Console.getIntegerInput("Enter an Integer");
+                    i2 = Console.getDoubleInput("Enter an Integer");
                 }
-                resultD = Calc.divide(i, i2);
+                resultD = Calc.divide(resultD, i2);
 
-                System.out.println(i + " " + sign + " " + i2 + "= " + " " + resultD);
+                System.out.println(resultD);
             } else if (sign.equals("*")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                Integer i2 = Console.getIntegerInput("Enter an Integer");
-                result = Calc.multiply(i, i2);
 
-                System.out.println(i + " " + sign + " " + i2 + "= " + " " + result);
+                double i2 = Console.getDoubleInput("Enter an Integer");
+                resultD = Calc.multiply(resultD, i2);
+
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("square root")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                resultD = Calc.squareRt(i);
+                resultD = Calc.squareRt(resultD);
 
-                System.out.println(i + " " + sign + "= " + " " + resultD);
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("square")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                result = Calc.square(i);
 
-                System.out.println(i + " " + sign + "= " + " " + result);
+                resultD = Calc.square(resultD);
+
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("power")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                Integer i2 = Console.getIntegerInput("Enter an Integer");
-                resultD = Calc.power(i, i2);
 
-                System.out.println(i + " " + sign + " " + i2 + "= " + " " + resultD);
+                double i2 = Console.getDoubleInput("Enter an Integer");
+                resultD = Calc.power(resultD, i2);
+
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("inverse")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                resultD = Calc.inverse(i);
 
-                System.out.println(i + " " + sign + "= " + " " + resultD);
+                resultD = Calc.inverse(resultD);
+
+                System.out.println(resultD);
             } else if (sign.equals("-/+")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                result = Calc.changeSign(i);
 
-                System.out.println(i + " " + sign + "= " + " " + resultD);
+                resultD = Calc.changeSign(resultD);
+
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("sine")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.sine(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.sine(resultD);
+
+                System.out.println(resultD);
                 Console.switchDisplay(resultD);
 
             } else if (sign.toLowerCase().equals("cosine")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.cosine(d);
+                resultD = SciCal.cosine(resultD);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                System.out.println(resultD);
                 Console.switchDisplay(resultD);
 
             } else if (sign.toLowerCase().equals("tangent")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.tangent(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.tangent(resultD);
+
+                System.out.println(resultD);
                 Console.switchDisplay(resultD);
 
             } else if (sign.toLowerCase().equals("asine")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.invSine(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.invSine(resultD);
+
+                System.out.println(resultD);
                 Console.switchDisplay(resultD);
 
             } else if (sign.toLowerCase().equals("acosine")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.invCosine(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.invCosine(resultD);
+
+                System.out.println(resultD);
                 Console.switchDisplay(resultD);
 
             } else if (sign.toLowerCase().equals("atan")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.invTan(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.invTan(resultD);
+
+                System.out.println(resultD);
                 Console.switchDisplay(resultD);
 
             } else if (sign.toLowerCase().equals("log")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.log(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.log(resultD);
+
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("10^x")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.invLog(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.invLog(resultD);
+
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("Ln")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.natlog(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.natlog(resultD);
+
+                System.out.println(resultD);
             } else if (sign.toLowerCase().equals("e^x")) {
-                Double d = Console.getDoubleInput("Enter a double.");
-                resultD = SciCal.invNatlog(d);
 
-                System.out.println(d + " " + sign + "= " + " " + resultD);
+                resultD = SciCal.invNatlog(resultD);
+
+                System.out.println(resultD);
             } else if (sign.equals("!")) {
-                Integer i = Console.getIntegerInput("Enter an Integer");
-                result = SciCal.factorial(i);
 
-                System.out.println(i + " " + sign + "= " + " " + result);
-            } else
+               resultD = SciCal.factorial((int)resultD);
+
+                System.out.println(resultD);
+            }else if (sign.toLowerCase().equals("SwitchDisplay")) {
+                System.out.println("Hexadecimal, Binary, Octal, Decimal");
+                sign = Console.getStringInput("Enter a string");
+                SciCal.switchDisplayMode(sign, resultD);
+
+                //System.out.println(resultD);
+            }
+
+            else
                 System.out.println("Error, Please check your input");
 
             System.out.println("");
